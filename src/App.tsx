@@ -35,6 +35,7 @@ function App() {
 
     fetchAverageAPY();
     setInterval(() => fetchAverageAPY(), 600000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchAPY = () => {
