@@ -38,7 +38,9 @@ function App() {
   }, []);
 
   const fetchAPY = () => {
-    fetch("https://react-api-feed.herokuapp.com/apy?API_KEY=12345678")
+    fetch(
+      `https://react-api-feed.herokuapp.com/apy?API_KEY=${process.env.REACT_APP_APY_API_KEY}`
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data !== undefined || null) {
@@ -50,7 +52,9 @@ function App() {
   };
 
   const fetchAverageAPY = () => {
-    fetch("https://react-api-feed.herokuapp.com/avg-apy?API_KEY=12345678")
+    fetch(
+      `https://react-api-feed.herokuapp.com/avg-apy?API_KEY=${process.env.REACT_APP_APY_API_KEY}`
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
