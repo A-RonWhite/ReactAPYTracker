@@ -38,17 +38,19 @@ function App() {
   }, []);
 
   const fetchAPY = () => {
-    fetch("http://localhost:8000/apy")
+    fetch("https://react-api-feed.herokuapp.com/apy?API_KEY=12345678")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        setAPY(data);
-        console.log(apy);
+        if (data !== undefined || null) {
+          console.log(data);
+          setAPY(data);
+          console.log(apy);
+        }
       });
   };
 
   const fetchAverageAPY = () => {
-    fetch("http://localhost:8000/avg-apy")
+    fetch("https://react-api-feed.herokuapp.com/avg-apy?API_KEY=12345678")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

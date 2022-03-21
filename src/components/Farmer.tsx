@@ -32,7 +32,7 @@ export default function Farmer({
             <p>{farmerAPY}%</p>
           </div>
           <div className="stats">
-            <p>30d avg:</p>
+            <p>7d avg:</p>
             <p>{monthlyAPY}%</p>
           </div>
           <div className="stats">
