@@ -5,6 +5,19 @@ import franciumLogo from "./images/francium-logo.png";
 import tulipLogo from "./images/tulip-logo.svg";
 import "./App.css";
 
+import * as Sentry from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
+
+Sentry.init({
+  dsn: "https://f02e4bd9d4994eef91b90f4a6cc52bd6@o319326.ingest.sentry.io/6273739",
+  integrations: [new BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
+
 interface APYObject {
   basis: number;
   francium: number;
